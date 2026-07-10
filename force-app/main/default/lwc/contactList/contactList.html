@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Contacts" icon-name="standard:contact">
+        <!-- lwc:if chain: exactly one branch renders — no compound getters -->
+        <template lwc:if={isLoading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+        <template lwc:elseif={error}>
+            <p class="slds-text-color_error slds-p-around_medium">
+                Failed to load contacts. Please try again.
+            </p>
+        </template>
+        <template lwc:else>
+            <ul class="slds-p-around_medium">
+                <template for:each={contacts} for:item="contact">
+                    <li key={contact.Id} class="contact-row">{contact.Name}</li>
+                </template>
+            </ul>
+        </template>
+
+        <div slot="footer">
+            <lightning-button
+                label="Add Contact"
+                class="add-btn"
+                onclick={handleAddContact}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

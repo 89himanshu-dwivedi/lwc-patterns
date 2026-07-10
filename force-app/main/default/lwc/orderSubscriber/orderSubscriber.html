@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Order Detail" icon-name="standard:order_item">
+        <div class="slds-p-around_medium">
+            <template lwc:if={selectedOrderId}>
+                <p class="selected">Selected order: <b>{selectedOrderId}</b></p>
+            </template>
+            <template lwc:else>
+                <p class="empty">Select an order to see details.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

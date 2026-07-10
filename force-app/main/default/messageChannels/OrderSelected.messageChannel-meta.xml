@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>OrderSelected</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Published when a user selects an order anywhere on the page.</description>
+    <lightningMessageFields>
+        <fieldName>orderId</fieldName>
+        <description>Selected order identifier</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>source</fieldName>
+        <description>Component that published the message</description>
+    </lightningMessageFields>
+</LightningMessageChannel>
