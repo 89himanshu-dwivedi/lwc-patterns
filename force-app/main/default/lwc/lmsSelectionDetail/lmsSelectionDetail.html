@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Selection Detail (LMS Subscriber)" icon-name="standard:record">
+        <div class="slds-p-around_medium">
+            <template lwc:if={recordName}>
+                <p>Selected: <strong>{recordName}</strong></p>
+                <p class="slds-text-color_weak">{recordId}</p>
+            </template>
+            <template lwc:else>
+                <p>Pick an account in the publisher component &mdash; I hear it via LMS.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

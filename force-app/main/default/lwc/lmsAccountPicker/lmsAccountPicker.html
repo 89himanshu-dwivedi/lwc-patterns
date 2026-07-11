@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Account Picker (LMS Publisher)" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+            <template for:each={accounts} for:item="acc">
+                <p key={acc.id} class="slds-p-vertical_xx-small">
+                    <a data-id={acc.id} data-name={acc.name} onclick={handleSelect}>{acc.name}</a>
+                </p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

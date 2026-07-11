@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Live Order Feed (Platform Events)" icon-name="standard:events">
+        <div class="slds-p-around_medium">
+            <p class="slds-text-color_weak slds-m-bottom_small">
+                Subscribed to <code>/event/Order_Status_Event__e</code> via empApi &mdash;
+                real-time push, no polling.
+            </p>
+            <template lwc:if={events.length}>
+                <template for:each={events} for:item="evt">
+                    <div key={evt.key} class="slds-box slds-box_x-small slds-m-bottom_x-small">
+                        <strong>{evt.orderNumber}</strong> &rarr; {evt.status}
+                        <span class="slds-float_right slds-text-color_weak">{evt.receivedAt}</span>
+                    </div>
+                </template>
+            </template>
+            <template lwc:else>
+                <p>Waiting for events&hellip; publish one from Apex:
+                    <code>OrderEventPublisher.publishStatus('ORD-1001','SHIPPED');</code>
+                </p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

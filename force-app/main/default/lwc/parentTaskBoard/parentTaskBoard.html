@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Task Board (Parent-Child Events)" icon-name="standard:task">
+        <div class="slds-p-around_medium">
+            <template for:each={tasks} for:item="task">
+                <c-child-task-card key={task.id} task={task}
+                                   ontoggle={handleToggle}></c-child-task-card>
+            </template>
+            <p class="slds-m-top_small">Done: <strong>{doneCount}</strong> / {tasks.length}</p>
+        </div>
+    </lightning-card>
+</template>

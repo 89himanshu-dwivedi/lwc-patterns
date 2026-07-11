@@ -1,0 +1,16 @@
+<!--
+  AURA + LWC INTEROP: Aura can host LWC (this file), but LWC cannot host Aura —
+  so migrations go leaf-first: rewrite leaves as LWC, keep the Aura shell,
+  then replace the shell last.
+-->
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="banner" type="String" default="Aura shell hosting an LWC leaf"/>
+
+    <lightning:card title="Aura Shell → LWC Leaf" iconName="standard:hierarchy">
+        <div class="slds-p-around_medium">
+            <p class="slds-m-bottom_small slds-text-color_weak">{!v.banner}</p>
+            <!-- LWC used directly inside Aura markup -->
+            <c:parentTaskBoard/>
+        </div>
+    </lightning:card>
+</aura:component>

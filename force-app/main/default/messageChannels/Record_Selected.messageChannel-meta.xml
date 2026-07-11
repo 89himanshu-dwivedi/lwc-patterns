@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Broadcasts the selected record between unrelated components (LMS demo).</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Id of the selected record</description>
+        <fieldName>recordId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Display label for the selection</description>
+        <fieldName>recordName</fieldName>
+    </lightningMessageFields>
+    <masterLabel>Record Selected</masterLabel>
+</LightningMessageChannel>
